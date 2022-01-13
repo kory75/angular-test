@@ -1,27 +1,30 @@
 # AngularTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.14.
+## Introduction
 
-## Development server
+This is a simple web application which contains three entities; customers, products and orders. It uses the `angular/in-memory-web-api` library (see https://github.com/angular/in-memory-web-api) to mimic a database and api.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Data
 
-## Code scaffolding
+The following files are contained in the `data` folder
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `customer.ts`, `order.ts` and `product.ts` contain the types and dummy data for each entity.
+- `app-data.ts` the setup for the `angular/in-memory-web-api`
+- `api.service.ts` an Angular service which uses the `HttpClient` to retrieve data from the mock apis/
 
-## Build
+## Instructions
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Display a list of orders in a table in the `app.component.ts` file, with the following headers
 
-## Running unit tests
+   - Order Id
+   - Customer Name
+   - Order Date (formatted as `dd/MM/yyyy`)
+   - Product Name
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Implement a select to filter orders by customer name. The select should
+   - Should contain options for each of the customer names as well as an empty option.
+   - The empty option should be initially selected.
+   - When the empty option is selected all orders should be shown.
+   - When a customer name option is selected the orders should be filtered by customer name
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+You will be assessed on your use of RxJs, how you structure your code, your use of types and general best practices. You don't need to worry about the styling of the application. The test should take around an hour.
