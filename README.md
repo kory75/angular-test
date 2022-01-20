@@ -30,4 +30,4 @@ The following files are contained in the `data` folder
 
 3. Change the `app.component.ts` change detection strategy to `ChangeDetectionStrategy.OnPush`. If you have done the previous tasks correctly the application should still work.
 
-You will be assessed on your use of RxJs, how you structure your code, your use of types and general best practices. You don't need to worry about the styling of the application. The test should take around an hour.
+You will be assessed on your use of RxJs (hint: your code shouldn't use the subscribe method, use the async pipe), how you structure your code, your use of types and general best practices. You don't need to worry about the styling of the application. The test should take around an hour.
