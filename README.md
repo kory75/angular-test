@@ -22,9 +22,12 @@ The following files are contained in the `data` folder
    - Product Name
 
 2. Implement a select to filter orders by customer name. The select should
+
    - Should contain options for each of the customer names as well as an empty option.
    - The empty option should be initially selected.
    - When the empty option is selected all orders should be shown.
    - When a customer name option is selected the orders should be filtered by customer name
+
+3. Change the `app.component.ts` change detection strategy to `ChangeDetectionStrategy.OnPush`. If you have done the previous tasks correctly the application should still work.
 
 You will be assessed on your use of RxJs, how you structure your code, your use of types and general best practices. You don't need to worry about the styling of the application. The test should take around an hour.
