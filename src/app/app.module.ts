@@ -5,13 +5,16 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppData } from './data/app-data';
 
 import { AppComponent } from './app.component';
+import { FilterByCustomerPipe } from './pipe/filter-by-customer.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FilterByCustomerPipe],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(AppData),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
