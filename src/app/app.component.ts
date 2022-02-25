@@ -29,14 +29,14 @@ import {ProductsService} from "./service/products.service";
       </thead>
       <tbody>
         <!-- 1. TODO display a list of orders here. -->
-
-        <tr *ngFor="let order of orderView$ | async | filterByCustomer: selectedCustomer">
+        <ng-container *ngIf="orderView$ | async; let orderView">
+        <tr *ngFor="let order of orderView | filterByCustomer: selectedCustomer">
           <td>{{order.id}}</td>
           <td >{{order.customerName}}</td>
           <td>{{order.date | date }}</td>
           <td >{{order.productName}}</td>
         </tr>
-
+        </ng-container>
       </tbody>
     </table>
   `,
