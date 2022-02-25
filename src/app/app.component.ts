@@ -48,8 +48,7 @@ export class AppComponent implements OnInit {
   orderView$: Observable<OrderView[]> = new Observable<OrderView[]>();
 
   constructor(private ordersService: OrdersService,
-              private customerService: CustomersService,
-              private productService: ProductsService) {
+              private customerService: CustomersService) {
   }
 
   ngOnInit() : void {
@@ -62,25 +61,6 @@ export class AppComponent implements OnInit {
   }
 
   public GetOrderView(): void {
-    this.orderView$ =  forkJoin({
-        orders: this.ordersService.GetOrders(),
-        customers: this.customers$,
-        products: this.productService.GetProducts() }
-    ) . pipe(
-      map(data => {
-        let orderView : OrderView[] = [];
-        data.orders.forEach( order => {
-          orderView.push( {
-            id: order.id,
-            date: order.date,
-            customerId: order.customerId,
-            customerName: data.customers.find( customer => customer.id === order.customerId)?.name as string,
-            productId: order.productId,
-            productName: data.products.find( product => product.id === order.productId)?.name as string,
-          })
-        });
-        return orderView;
-    })
-    );
+    this.orderView$ = this.ordersService.GetOrderView();
   }
 }
